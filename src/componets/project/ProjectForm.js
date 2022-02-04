@@ -27,8 +27,8 @@ function ProjectForm({handleSubmit, btnText, projectData}){
 
     const submit = (e) => {
         e.preventDefaut()
-        console.log(project)
-        // handleSubmit(project)
+        //console.log(project)
+        handleSubmit(project)
         
     }
 
@@ -39,6 +39,7 @@ function ProjectForm({handleSubmit, btnText, projectData}){
         setProject({...project, category: {
             id: e.target.value,
             name: e.target.options[e.target.selectedIndex].text,
+        
         },
     })
     }
@@ -51,7 +52,7 @@ function ProjectForm({handleSubmit, btnText, projectData}){
             name="name" 
             placeholder="Insira o nome do projeto"
             handleOnChanger={handleChange}
-            value={project.name ? project.name :''}  
+            value={project.name} //? project.name :''}  
             />
             <Input 
             type="namber" 
