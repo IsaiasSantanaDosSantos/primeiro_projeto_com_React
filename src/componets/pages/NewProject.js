@@ -6,7 +6,7 @@ import styles from './NewProject.module.css'
 
 function NewProject(){
 
-    const history = useNavigate()
+    const navigate = useNavigate()
 
     function createPost(project){ 
 
@@ -17,7 +17,7 @@ function NewProject(){
         fetch("http://localhost:5000/projects", {
             method: "POST",
             headers: {
-                'Content-Type': 'application/json',
+                'Content-type': 'application/json',
             },
             body: JSON.stringify(project),
         })
@@ -25,7 +25,7 @@ function NewProject(){
         .then((data) => {
             console.log(data)
             //redirect
-            history('/projects', {state: { message: 'Projeto criado com sucesso!'}}) //Mensagem de sucesso na criação do novo projeto
+            navigate('/projects', {state: { message: 'Projeto criado com sucesso!'}}) //Mensagem de sucesso na criação do novo projeto
         })
         .catch(err => console.log(err))
 
