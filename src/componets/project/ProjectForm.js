@@ -27,22 +27,23 @@ function ProjectForm({handleSubmit, btnText, projectData}){
 
     const submit = (e) => {
         e.preventDefaut()
-        
+        console.log("Nome projeto")
         handleSubmit(project)
+        
     }
 
     function handleChange(e){
         setProject({...project, [e.target.name]: e.target.value})
-        console.log(project)
+        console.log(e.target.value) //  mostrar valor projeto
     }
     function handleCategory(e){
         setProject({...project, category: {
             id: e.target.value,
             name: e.target.options[e.target.selectedIndex].text,
-             
+            
         },
     })
-
+    console.log(e.target.options[e.target.selectedIndex].text) // mostrar categoria projeto
     }
 
     return(
